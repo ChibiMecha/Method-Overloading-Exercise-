@@ -6,7 +6,7 @@
         {
             Console.WriteLine(Add(8,8));
             Console.WriteLine(Add(8.8m,777.7m));
-            Console.WriteLine(Add(0.2m,0.4m,true));
+            Console.WriteLine(Add(1m,0m,true));
         }
     public static int Add(int x, int y)
     {
@@ -20,9 +20,13 @@
     
     public static string Add(decimal x, decimal y, bool notRich)
     {
-        if (notRich && (x + y) !=1)
+        if (notRich && (x + y) >1)
         {
-            return $"{x+y} dollars";
+            return $"You have {x+y} dollars";
+        }
+        else if (notRich && (x + y) ==1)
+        {
+            return $"You have {x+y} dollar";
         }
         else
         {
